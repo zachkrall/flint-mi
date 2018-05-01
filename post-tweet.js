@@ -1,6 +1,3 @@
-if( !process.env.production ){
-    require('dotenv').config();
-}
 const twitter = require('twitter');
 const moment = require('moment');
 
@@ -11,19 +8,31 @@ var client = new twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-var tweet = "Flint, Michigan still doesn't have clean water."
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+}
 
-var today = moment().format('dddd');
+// April 25, 2014
+var start = moment([2014, 4, 25]);
+var today = moment();
+var dayOfWeek = moment().format('dddd');
 
-if ( today === 'Tuesday' ){
-    client.post('statuses/update', {status: tweet},  function(error, tweet, response) {
-      if(error){
-          console.log('Today is...' + today);
-          throw error
-      };
-      console.log(tweet);  // Tweet body.
-      console.log(response);  // Raw response object.
-    });
+var since = numberWithCommas( today.diff(start, 'days') );
+
+var text = "Flint, Michigan hasn't had clean water for " + since + " days.";
+
+if ( dayOfWeek === 'Tuesday' ){
+        
+    // client.post('statuses/update', {status: text},  function(error, tweet, response) {
+    //   if(error) throw error;
+    //   console.log(tweet);
+    //   console.log(response);
+    // });
+    
+    console.log(text);
+    
 } else {
-    console.log('Today is not Tuesday. It is ' + today );
+    
+    console.log('Today is not Tuesday.');
+
 }
