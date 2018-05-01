@@ -1,3 +1,4 @@
+# import python-twitter
 import twitter
 from local_settings import *
 
@@ -15,6 +16,6 @@ def connect():
 
 if DEBUG == False:
     status = api.PostUpdate(tweet_text)
-    print status.text.encode('utf-8')
-else
-    print tweet_text
+    print(status)
+else:
+    print(tweet_text)
