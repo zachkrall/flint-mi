@@ -1,1 +1,1 @@
-worker: python ebooks.py
+worker: node post-tweet.js
