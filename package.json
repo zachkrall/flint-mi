@@ -1,0 +1,24 @@
+{
+  "name": "flint-mi",
+  "version": "1.0.0",
+  "description": "#### Sources [1] [https://www.nytimes.com/interactive/2016/01/21/us/flint-lead-water-timeline.html](https://www.nytimes.com/interactive/2016/01/21/us/flint-lead-water-timeline.html)",
+  "main": "post-tweet.js",
+  "dependencies": {
+    "moment": "^2.22.1",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachkrall/flint-mi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zachkrall/flint-mi/issues"
+  },
+  "homepage": "https://github.com/zachkrall/flint-mi#readme"
+}
