@@ -23,11 +23,11 @@ var text = "Flint, Michigan hasn't had clean water for " + since + " days.";
 
 if ( dayOfWeek === 'Tuesday' ){
         
-    // client.post('statuses/update', {status: text},  function(error, tweet, response) {
-    //   if(error) throw error;
-    //   console.log(tweet);
-    //   console.log(response);
-    // });
+    client.post('statuses/update', {status: text},  function(error, tweet, response) {
+      if(error) throw error;
+      console.log(tweet);
+      console.log(response);
+    });
     
     console.log(text);
     
