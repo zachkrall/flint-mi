@@ -19,20 +19,20 @@ var dayOfWeek = moment().format('dddd');
 
 var since = numberWithCommas( today.diff(start, 'days') );
 
-var text = "Flint, Michigan hasn't had clean water for " + since + " days.";
+var text = "Flint, Michigan hasn't had clean water for " + since + " days. #Flint #FlintWaterCrisis";
 
 if ( dayOfWeek === 'Tuesday' ){
-        
+
     client.post('statuses/update', {status: text},  function(error, tweet, response) {
       if(error) throw error;
       console.log(tweet);
       console.log(response);
     });
-    
+
     console.log(text);
-    
+
 } else {
-    
+
     console.log('Today is not Tuesday.');
 
 }
